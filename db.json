@@ -1,0 +1,19 @@
+{
+  "bg": "https://c.wallhere.com/photos/43/f6/Batman_Arkham_Knight_Batman_video_games-1668785.jpg!d",
+  "title": "The Dark Knight Quiz",
+  "description": "Um quiz completo sobre o Cavaleiro de Gotham",
+  "questions": [],
+  "external": [],
+  "theme": {
+    "colors": {
+      "primary": "#040b0c",
+      "secondary": "#E7E331",
+      "mainBg": "#383f41",
+      "mainText": "#FFF",
+      "contrastText": "#BBC9BC",
+      "wrong": "#442F65",
+      "success": "#043D81"
+    },
+    "border-radius": "4px"
+  }
+}
