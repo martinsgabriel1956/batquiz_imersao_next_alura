@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import db from '../../../db.json';
+import db from "../../../db.json";
 
 const Widget = styled.div`
   margin: 24px 0;
@@ -58,6 +58,29 @@ Widget.Content = styled.div`
   ul {
     list-style: none;
     padding: 0;
+  }
+
+  input[type="text"] {
+    border: 1px solid ${db.theme.colors.secondary};
+    width: 100%;
+    height: 38px;
+    margin-top: 14px;
+    border-radius: 3.5px;
+    background-color: ${db.theme.colors.primary};
+    color: ${db.theme.colors.mainText};
+
+    &::placeholder {
+      color: #a0a6cb;
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+    }
+    &:focus {
+      outline-style: none;
+    }
   }
 `;
 
