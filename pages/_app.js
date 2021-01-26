@@ -1,5 +1,6 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import db from "../db.json";
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Head from 'next/head';
+import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
   html, body {
     min-height: 100vh;
+    font-family: 'Comic Neue', cursive;
   }
   #__next {
     flex: 1;
@@ -25,11 +27,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = db.theme;
+const { theme } = db;
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <title>The Dark Knight Quiz</title>
+        <meta property="og:image" content={db.bg} />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
