@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import db from "../../../db.json";
 
 const Widget = styled.div`
   margin: 24px 0;
-  border: 1px solid ${db.theme.colors.secondary};
-  background-color: ${db.theme.colors.primary};
-  border-radius: ${db.theme["border-radius"]};
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.primary};
+  border-radius: ${({ theme }) => theme["border-radius"]};
   overflow: hidden;
 
   h1,
@@ -21,14 +20,19 @@ const Widget = styled.div`
   h2,
   h3,
   p {
-    color: ${db.theme.colors.mainText};
-    text-shadow: 2px 2px 4px ${db.theme.colors.primary};
+    color: ${({ theme }) => theme.colors.mainText};
+    text-shadow: 2px 2px 4px ${({ theme }) => theme.colors.primary};
   }
 
   p {
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
+  }
+
+  &:nth-child(3) {
+    border: 1px solid ${({ theme }) => theme.colors.success};
+    
   }
 `;
 
@@ -37,7 +41,7 @@ Widget.Header = styled.header`
   justify-content: flex-start;
   align-items: center;
   padding: 18px 32px;
-  background-color: ${db.theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.secondary};
 
   * {
     margin: 0;
@@ -59,28 +63,24 @@ Widget.Content = styled.div`
     list-style: none;
     padding: 0;
   }
+`;
 
-  input[type="text"] {
-    border: 1px solid ${db.theme.colors.secondary};
-    width: 100%;
-    height: 38px;
-    margin-top: 14px;
-    border-radius: 3.5px;
-    background-color: ${db.theme.colors.primary};
-    color: ${db.theme.colors.mainText};
+Widget.Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.mainText};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme["border-radius"]};
+  color: ${({ theme }) => theme.colors.primary};
+  transition: .3s;
+  display: block;
 
-    &::placeholder {
-      color: #a0a6cb;
-      font-family: Lato;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 24px;
-      letter-spacing: 0.15px;
-    }
-    &:focus {
-      outline-style: none;
-    }
+  &:hover,
+  &:focus {
+    opacity: .5;
   }
 `;
 

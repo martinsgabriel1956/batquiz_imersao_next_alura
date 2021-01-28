@@ -1,33 +1,42 @@
-import styled from 'styled-components';
-import db from '../../../db.json';
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Button = styled.button`
-  margin-top: 22px;
-  display: inline-block;
-  text-align: center;
   width: 100%;
-  padding: 10px;
-  border: 1px solid ${db.theme.colors.contrastText};
-  background-color: ${db.theme.colors.contrastText};
-  border-radius: 2px;
+  padding: 10px 16px;
+
+  border: 0;
+  border-radius: ${({ theme }) => theme["border-radius"]};
+  
   font-size: 16px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px ${db.theme.colors.primary};
-  cursor: pointer;
-  color: ${db.theme.colors.mainText};
+  line-height: 1;
+  text-align: center;
+
+  background-color: ${({ theme }) => theme.colors.contrastText};
+  color: ${({ theme }) => theme.colors.mainText};
+  text-shadow: 2px 2px 4px ${({ theme }) => theme.colors.primary};
+
 
   &:focus {
     outline-style: none;
   }
 
   &:enabled {
-    background-color: ${db.theme.colors.success};
+    background-color: ${({ theme }) => theme.colors.success} ;
     border: none;
+    cursor: pointer;
 
+    &:hover,
     &:focus {
-      outline-style: none;
+      opacity: 0.8;
     }
   }
 `;
+
+Button.propTypes = {
+  type: PropTypes.oneOf(["submit", "type", "button"]).isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export { Button };

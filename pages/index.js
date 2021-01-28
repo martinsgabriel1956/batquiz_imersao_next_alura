@@ -3,13 +3,14 @@ import { useRouter } from 'next/router';
 
 import db from '../db.json';
 
-import { Widget } from '../src/components/Widget';
-import { Footer } from '../src/components/Footer';
-import { GitHubCorner } from '../src/components/GitHubCorner';
 import { QuizBackground } from '../src/components/QuizBackground';
-import { Button } from '../src/components/Button';
 import { QuizContainer } from '../src/components/QuizContainer';
 import { QuizLogo } from '../src/components/QuizLogo';
+import { Widget } from '../src/components/Widget';
+import { Input } from '../src/components/Input';
+import { Button } from '../src/components/Button';
+import { Footer } from '../src/components/Footer';
+import { GitHubCorner } from '../src/components/GitHubCorner';
 
 export default function Home() {
   const router = useRouter();
@@ -18,7 +19,6 @@ export default function Home() {
   function player(infosDoEvento) {
     infosDoEvento.preventDefault();
     router.push(`/quiz?name=${name}`);
-    console.log('Fazendo uma submissão por meio do React');
   }
 
   return (
@@ -34,15 +34,16 @@ export default function Home() {
             <form
               onSubmit={player}
             >
-              <input
-                type="text"
+              <Input
+                name="nomeDoUsuario"
                 placeholder="Digite o seu nome :)"
                 onChange={(infosDoEvento) => {
                   setName(infosDoEvento.target.value);
                 }}
+                value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
-                Bora Jogar {' '} {name}!
+              {`Bora Jogar ${name}?`}
               </Button>
             </form>
           </Widget.Content>

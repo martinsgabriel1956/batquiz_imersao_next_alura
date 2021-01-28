@@ -1,36 +1,59 @@
-import Link from 'next/link';
+import React, { useEffect, useState } from "react";
+import db from "../db.json";
 
-import db from '../db.json';
+import { QuizBackground } from "../src/components/QuizBackground";
+import { QuizLogo } from "../src/components/QuizLogo";
+import { QuizContainer } from "../src/components/QuizContainer";
+import { QuestionWidget } from "../src/components/QuestionWidget";
+import { LoadingWidget } from "../src/components/LoadingWidget";
 
-import { Widget } from '../src/components/Widget';
-import { Footer } from '../src/components/Footer';
-import { QuizBackground } from '../src/components/QuizBackground';
-import { Button } from '../src/components/Button';
-import { QuizContainer } from '../src/components/QuizContainer';
-import { QuizLogo } from '../src/components/QuizLogo';
+export default function QuizPage() {
+  const screenStates = {
+    QUIZ: "QUIZ",
+    LOADING: "LOADING",
+    RESULT: "RESULT",
+  };
 
-export default function Quiz() {
+  const [screenState, setScreenState] = useState(screenStates.LOADING);
+  const [ currentQuestion, setCurrentQuestion ] = useState(0);
+
+  const totalQuestions = db.questions.length;
+  const questionIndex = currentQuestion;
+  const question = db.questions[questionIndex];
+
+  useEffect(() => {
+    setTimeout(() => {
+      setScreenState(screenStates.QUIZ);
+    }, 1 * 1000);
+  }, []);
+
+  function handleSubmit() {
+    const nextQuestion = questionIndex + 1;
+    if(nextQuestion < totalQuestions) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setScreenState(screenStates.RESULT);
+    }
+
+  }
+
   return (
     <>
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
           <QuizLogo />
-          <Widget>
-            <Widget.Header>
-              <h1>Pergunta 1 de 50</h1>
-            </Widget.Header>
-            <Widget.Content>
-              <p>Quando o Batman foi criado?</p>
-
-              <Link href="/quiz">
-                <Button>
-                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                  <a>Confirmar</a>
-                </Button>
-              </Link>
-            </Widget.Content>
-          </Widget>
-          <Footer />
+          {screenState === screenStates.QUIZ && (
+            <QuestionWidget
+              question={question}
+              questionIndex={questionIndex}
+              totalQuestions={totalQuestions}
+              onSubmit={handleSubmit}
+            />
+          )}
+          {screenState === screenStates.LOADING && <LoadingWidget />}
+          {screenState === screenStates.RESULT && (
+            <h1>Você acertou X questões, parabéns!</h1>
+          )}
         </QuizContainer>
       </QuizBackground>
     </>
