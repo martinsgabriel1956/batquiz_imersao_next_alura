@@ -27,6 +27,8 @@ export default function QuizPage() {
     }, 1 * 1000);
   }, []);
 
+  
+
   function handleSubmit() {
     const nextQuestion = questionIndex + 1;
     if(nextQuestion < totalQuestions) {

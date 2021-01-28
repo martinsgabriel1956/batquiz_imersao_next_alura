@@ -42,6 +42,7 @@ function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
                   htmlFor={alternativeId}
                 >
                   <input 
+                    style={{ display: 'none' }}
                     id={alternativeId}
                     name={questionId}
                     type="radio"
@@ -51,7 +52,7 @@ function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
               );
             })}
             <Button 
-            type="submit"
+             type="submit"
             >
               Confirmar
             </Button>
