@@ -14,8 +14,10 @@ export default function QuizPage() {
     RESULT: "RESULT",
   };
 
+  
   const [screenState, setScreenState] = useState(screenStates.LOADING);
-  const [ currentQuestion, setCurrentQuestion ] = useState(0);
+  
+  const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const totalQuestions = db.questions.length;
   const questionIndex = currentQuestion;
@@ -27,16 +29,13 @@ export default function QuizPage() {
     }, 1 * 1000);
   }, []);
 
-  
-
   function handleSubmit() {
     const nextQuestion = questionIndex + 1;
-    if(nextQuestion < totalQuestions) {
+    if (nextQuestion < totalQuestions) {
       setCurrentQuestion(nextQuestion);
     } else {
       setScreenState(screenStates.RESULT);
     }
-
   }
 
   return (

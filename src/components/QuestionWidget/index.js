@@ -3,8 +3,14 @@ import React from "react";
 import { Widget } from "../Widget";
 import { Button } from "../Button";
 
-function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
-  const questionId = `question__${questionIndex}`
+function QuestionWidget({
+  question,
+  questionIndex,
+  totalQuestions,
+  onSubmit,
+}) {
+  const questionId = `question__${questionIndex}`;
+
   return (
     <>
       <Widget>
@@ -28,34 +34,29 @@ function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
 
           <p>{question.description}</p>
 
-          <form onSubmit={(infosDoEvento) => {
-            infosDoEvento.preventDefault();
-            onSubmit();
-          }}>
+          <form
+            onSubmit={(infosDoEvento) => {
+              infosDoEvento.preventDefault();
+              onSubmit();
+            }}
+          >
             {question.alternatives.map((alternative, alternativeIndex) => {
               console.log("Ne");
 
               const alternativeId = `alternative__${alternativeIndex}`;
               return (
-                <Widget.Topic 
-                  as="label" 
-                  htmlFor={alternativeId}
-                >
-                  <input 
-                    style={{ display: 'none' }}
+                <Widget.Topic as="label" htmlFor={alternativeId}>
+                  <input
+                    style={{ display: "none" }}
                     id={alternativeId}
                     name={questionId}
                     type="radio"
-                    />
-                    {alternative}
+                  />
+                  {alternative}
                 </Widget.Topic>
               );
             })}
-            <Button 
-             type="submit"
-            >
-              Confirmar
-            </Button>
+            <Button type="submit">Confirmar</Button>
           </form>
         </Widget.Content>
       </Widget>
