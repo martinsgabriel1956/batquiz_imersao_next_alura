@@ -4,6 +4,7 @@ import styled from "styled-components";
 const FooterWrapper = styled.footer`
   background-color: #00000070;
   padding: 20px;
+  margin-bottom: 38px;
   display: flex;
   align-items: center;
   border-radius: 4px;
@@ -25,9 +26,12 @@ const FooterWrapper = styled.footer`
 
       &:hover {
         color: ${({ theme }) => theme.colors.success};
-        text-shadow: 0.5px 0.5px ${({ theme }) => theme.colors.mainText}
+        text-shadow: 0.5px 0.5px ${({ theme }) => theme.colors.mainText};
       }
     }
+  }
+  @media (max-width: 425px) {
+    margin: 24px 12px 0;
   }
 `;
 

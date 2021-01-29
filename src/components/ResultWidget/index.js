@@ -1,5 +1,6 @@
 import React from "react";
 import { Widget } from "../Widget";
+import { Footer } from "../Footer";
 
 function ResultWidget({ results }) {
   return (
@@ -38,6 +39,7 @@ function ResultWidget({ results }) {
          </ul>
         </Widget.Content>
       </Widget>
+      <Footer />
     </>
   );
 }

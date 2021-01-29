@@ -54,7 +54,11 @@
       ]
     }
   ],
-  "external": [""],
+  "external": [
+    "https://mortalquiz-base.matheus-2000.vercel.app",
+    "https://alura-imersao-react-next.rafaelyano.vercel.app/",
+    "https://naruto-quiz.llofyy.vercel.app"
+  ],
   "theme": {
     "colors": {
       "primary": "#040b0c",

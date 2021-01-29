@@ -34,13 +34,18 @@ const Widget = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.success};
     
   }
+
+  @media (max-width: 425px) {
+    margin: 24px 12px;
+  }
+  
 `;
 
 Widget.Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 18px 32px;
+  padding: 18px 28px;
   background-color: ${({ theme }) => theme.colors.secondary};
 
   * {

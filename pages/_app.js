@@ -35,6 +35,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>The Dark Knight Quiz</title>
         <meta property="og:image" content={db.bg} />
+        <meta name="theme-color" content="#383f41" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap"
