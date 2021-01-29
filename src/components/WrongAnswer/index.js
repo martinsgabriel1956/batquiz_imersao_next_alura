@@ -4,7 +4,7 @@ import animationData from '../../lotties/wrong';
 
 function WrongAnswer()  {
   const defaultOptions = {
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
@@ -12,7 +12,7 @@ function WrongAnswer()  {
     },
   }
   return (
-    <Lottie options={defaultOptions} width={200} height={200} />
+    <Lottie style={{ marginTop: 10 }} options={defaultOptions} width={120} height={120} />
   );
 }
 

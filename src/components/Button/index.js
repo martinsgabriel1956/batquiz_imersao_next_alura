@@ -23,7 +23,8 @@ const Button = styled.button`
   }
 
   &:enabled {
-    background-color: ${({ theme }) => theme.colors.success} ;
+    background-color: ${({ theme }) => theme.colors.success};
+    color: ${({ theme }) => theme.colors.secondary};
     border: none;
     cursor: pointer;
 

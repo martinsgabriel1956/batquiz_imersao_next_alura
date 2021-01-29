@@ -4,7 +4,7 @@ import animationData from "../../lotties/success";
 
 function CorrectAnswer() {
   const defaultOptions = {
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
@@ -13,7 +13,7 @@ function CorrectAnswer() {
   };
 
   return (
-  <Lottie options={defaultOptions} width={200} height={200} />
+  <Lottie style={{ marginTop: 10 }} options={defaultOptions} width={110} height={110} />
   );
 };
 

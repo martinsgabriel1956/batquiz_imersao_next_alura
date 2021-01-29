@@ -6,13 +6,13 @@
     {
       "image": "https://media.giphy.com/media/1485wMdlDLG7mg/giphy.gif",
       "title": "Quando o Batman foi criado?",
-      "answer": 1,
+      "answer": 0,
       "alternatives": [1940, 1980, 1966, 1925]
     },
     {
       "image": "https://media.giphy.com/media/YabqH4YYNJGOk/giphy.gif",
       "title": "Quem foi o primeiro batman na TV e no Cinema?",
-      "answer": 4,
+      "answer": 3,
       "alternatives": [
         "George Clooney",
         "Val Kilmer",
@@ -23,7 +23,7 @@
     {
       "image": "https://media.giphy.com/media/3xz2BLBOt13X9AgjEA/giphy.gif",
       "title": "Qual a HQ mais icônica?",
-      "answer": 2,
+      "answer": 1,
       "alternatives": [
         "Piada Mortal",
         "Cavaleiro da Trevas",
@@ -34,7 +34,7 @@
     {
       "image": "https://media.giphy.com/media/YNzg6qRk8F4NOWOlzw/giphy.gif",
       "title": "Qual o atual Robin?",
-      "answer": 1,
+      "answer": 0,
       "alternatives": [
         "Damian Wayne",
         "Dick Grayson",
@@ -45,7 +45,7 @@
     {
       "image": "https://media.giphy.com/media/uO3zjKvoBFMis/giphy.gif",
       "title": "Qual a maior batalha do batman nas HQs?",
-      "answer": 3,
+      "answer": 2,
       "alternatives": [
         "Batman Vs Coruja - OS novos 52: Batman Vol.2 #6",
         "Batman Vs Darkseid - Crise Final #6",
@@ -63,6 +63,8 @@
       "mainText": "#FFF",
       "contrastText": "#BBC9BC",
       "wrong": "#442F65",
+      "wrongText": "#52B300",
+      "quizButton": "#DD2E36",
       "success": "#043D81"
     },
     "border-radius": "4px"

@@ -6,6 +6,8 @@ import { QuizLogo } from "../src/components/QuizLogo";
 import { QuizContainer } from "../src/components/QuizContainer";
 import { QuestionWidget } from "../src/components/QuestionWidget";
 import { LoadingWidget } from "../src/components/LoadingWidget";
+import { ResultWidget } from "../src/components/ResultWidget";
+
 
 export default function QuizPage() {
   const screenStates = {
@@ -14,14 +16,21 @@ export default function QuizPage() {
     RESULT: "RESULT",
   };
 
-  
   const [screenState, setScreenState] = useState(screenStates.LOADING);
-  
+  const [results, setResults] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-
+  
   const totalQuestions = db.questions.length;
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
+
+  function addResult(result) {
+    setResults([
+      ...results,
+      result,
+    ])
+  }
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -49,11 +58,12 @@ export default function QuizPage() {
               questionIndex={questionIndex}
               totalQuestions={totalQuestions}
               onSubmit={handleSubmit}
+              addResult={addResult}
             />
           )}
           {screenState === screenStates.LOADING && <LoadingWidget />}
           {screenState === screenStates.RESULT && (
-            <h1>Você acertou X questões, parabéns!</h1>
+            <ResultWidget results={results} />
           )}
         </QuizContainer>
       </QuizBackground>
