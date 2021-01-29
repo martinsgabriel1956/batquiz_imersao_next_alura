@@ -1,6 +1,8 @@
 import React from "react";
 import { Widget } from "../Widget";
 import { Footer } from "../Footer";
+import { Button } from "../Button";
+import { Link } from "../Link";
 
 function ResultWidget({ results }) {
   return (
@@ -23,9 +25,8 @@ function ResultWidget({ results }) {
           perguntas
          </h1>
         </Widget.Header>
-        
+
         <Widget.Content>
-         
          <ul>
            { results.map(( result, index ) => (
             <li key={`result__${result}`}>
@@ -37,6 +38,9 @@ function ResultWidget({ results }) {
             </li>
            ))}
          </ul>
+         <Link href="/">
+          <Button enabled>Voltar para Home</Button>
+         </Link> 
         </Widget.Content>
       </Widget>
       <Footer />
