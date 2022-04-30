@@ -15,6 +15,14 @@
 
 <br />
 
+## :computer: Projeto:
+
+<br />
+
+Aplicação de quiz com a tematica do universo do homem morcego. Além de, desafiar os jogadores podemos acessar outros quizzes criados durante a Imersão React Next.js da Alura.
+
+<br />
+
 ## Tecnologias :computer::
 
 <ul>
