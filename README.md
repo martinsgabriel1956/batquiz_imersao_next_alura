@@ -19,19 +19,19 @@
 
 <ul>
   <li>
-    <a href="https://pt-br.reactjs.org/">Next</a>
+    <a href="https://nextjs.org">Next</a>
   </li>
 
   <li>
-     <a href="https://reactnative.dev/">Styled Components</a>
+     <a href="https://styled-components.com">Styled Components</a>
   </li>
 
   <li>
-     <a href="https://expo.io/">Framer Motion</a>
+     <a href="https://www.framer.com/motion/">Framer Motion</a>
   </li>
 
   <li>
-     <a href="https://www.typescriptlang.org/">React-Lottie</a>
+     <a href="https://github.com/chenqingspring/react-lottie">React-Lottie</a>
   </li>
 </ul>
 
